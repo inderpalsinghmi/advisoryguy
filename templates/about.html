@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — {{SITE_TITLE}}</title>
+<meta name="description" content="About Inderpal Singh">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- MailerLite Universal -->
+<script>
+(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+ml('account', '{{ML_ACCOUNT}}');
+</script>
+<!-- End MailerLite Universal -->
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap-wide">
+    <a class="brand" href="/">{{SITE_TITLE}}</a>
+    <ul>
+      <li><a href="/">Writing</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/#subscribe">Subscribe</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <article class="wrap about-page">
+    <h1>About</h1>
+
+    <p>I've spent most of my career inside organizations that were trying to change how they work. The thread through all of it has been understanding how operations run and rebuilding the parts that don't. I've cared about making things run well since before it was a career — it's just how I think.</p>
+
+    <p><em>From the inside:</em> I was a Program Manager at Microsoft, where I earned a patent and shipped products across Windows and Office. I worked in the Office of the CEOs at Bridgewater Associates, handpicked to drive special initiatives during a period of rapid growth. At HSBC, I led a 6,100-person restructuring during the financial crisis, promoted to Senior Vice President for how I managed the organization through it.</p>
+
+    <p><em>From the outside:</em> I was a consultant at McKinsey, ranked in the top 15% of my peer group for problem solving and executive presence. Through Northshore Partners, I served as Head of Transformation at WWE, founding Chief Product and Technology Officer at the XFL, and delivered transformation programs for IDEO, Bridgewater, SY Partners, and others. Every client came back for more.</p>
+
+    <p>More recently I helped build Zelus Analytics, a sports AI platform, from early stage through its acquisition by Teamworks. I tripled revenue, led fundraising rounds, and managed the strategic exit. That experience — watching AI go from a pitch deck to a product that teams depended on — shaped how I think about AI implementation everywhere else.</p>
+
+    <p>I lead the transformation practice at <a href="{{SRA_URL}}">Silver Ridge Advisors</a>. I write here about what I'm learning.</p>
+
+    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+
+    <hr>
+
+    <h2>What we do</h2>
+
+    <p>People show up at different points:</p>
+
+    <p><em>Haven't started.</em> Leadership knows AI matters but doesn't know where to begin. The technology isn't the problem — it's knowing which processes to target, whether the data is ready, and how to avoid a twelve-month IT project that produces a slide deck. We run a diagnostic that answers those questions in two to six weeks.</p>
+
+    <p><em>Stuck in pilot.</em> There's a proof of concept that impressed some people in a demo, but nobody's comfortable rolling it into production. Usually the blockers are governance, data quality, or the fact that someone needs to change how they work. We help bridge that gap.</p>
+
+    <p><em>Doing some, need help with the rest.</em> Some workflows are automated. Others aren't. The team that built the first ones is stretched thin. We bring capacity and pattern recognition from having done this across twenty-plus organizations.</p>
+
+    <p>If any of that sounds familiar: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+
+    <p>See the full case portfolio at <a href="{{SRA_URL}}">silverridgeadvisors.com/transformation</a>.</p>
+  </article>
+
+  <section class="testimonials">
+    <div class="wrap-wide">
+      <h2>What clients have said</h2>
+      {{TESTIMONIALS}}
+    </div>
+  </section>
+
+  <section class="logo-bar">
+    <div class="row">
+      {{LOGOS}}
+    </div>
+  </section>
+
+  <section class="subscribe" id="subscribe">
+    <h2>{{SUBSCRIBE_HEADING}}</h2>
+    <div class="form-wrap">
+      <div class="ml-embedded" data-form="{{ML_FORM_ID}}"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="links">
+    <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+    <span>·</span>
+    <a href="{{LINKEDIN}}" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <p>© {{YEAR}} {{AUTHOR}}</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "site": {
+    "title": "The Curve Ahead",
+    "subtitle": "AI in Industry: From Strategy to Impact",
+    "author": "Inderpal Singh",
+    "tagline": "Where AI meets the way companies work.",
+    "email": "inderpal@singhventures.com",
+    "linkedin": "https://www.linkedin.com/in/inderpalsingh/",
+    "sra_url": "https://www.silverridgeadvisors.com/transformation",
+    "subscribe_heading": "Get the next one to your inbox",
+    "mailerlite_form_id": "lriWHw",
+    "mailerlite_account_id": "1511033"
+  },
+  "posts": [
+    {
+      "slug": "rise-of-ai-copilot-in-sports",
+      "title": "The Rise of the AI Co-Pilot in Sports",
+      "date": "2026-02-15",
+      "excerpt": "Claude Code and Codex are changing how developers write code. Microsoft 365 Copilot and Google's Gemini in Workspace are aiming to transform how we all handle productivity.",
+      "tags": ["sports", "AI copilots"],
+      "file": "rise-of-ai-copilot-in-sports.html"
+    },
+    {
+      "slug": "from-data-streams-to-smarter-teams",
+      "title": "From Data Streams to Smarter Teams, the Fourth Wave",
+      "date": "2026-03-15",
+      "excerpt": "Sports will hit differently in the next five years. AI, which has long been an abstract talking point, is becoming increasingly tangible.",
+      "tags": ["sports", "AI strategy"],
+      "file": "from-data-streams-to-smarter-teams.html"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "I truly value their expertise and unique combination of business and technical knowledge. They are trusted and valued partners to me, and I have recommended them to other clients where they have also received accolades. They have my highest recommendation.",
+      "attribution": "Chief Technology Officer, IDEO"
+    },
+    {
+      "quote": "The vision, thought leadership and goal-oriented thinking was a clear differentiation. They were a true extension of our firm.",
+      "attribution": "Management Technology Leader, Bridgewater Associates"
+    },
+    {
+      "quote": "They provided much needed leadership across the technology organization. A well respected and driven voice amongst our leadership team.",
+      "attribution": "Chief Technology Officer, WWE"
+    },
+    {
+      "quote": "We really recommend them for any strategic work. They built something that was immediately actionable for us. The future strategy of our institution is based upon their work.",
+      "attribution": "Executive Director, CCA"
+    }
+  ],
+  "logos": [
+    "mckinsey.png",
+    "bridgewater.png",
+    "microsoft.png",
+    "wwe.jpg",
+    "zelus.png",
+    "teamworks.png",
+    "xfl.jpg"
+  ]
+}

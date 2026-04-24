@@ -1,0 +1,9 @@
+{
+  "name": "the-curve-ahead",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Curve Ahead — static blog for advisoryguy.com",
+  "scripts": {
+    "build": "node build.js"
+  }
+}
