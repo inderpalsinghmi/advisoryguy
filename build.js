@@ -83,12 +83,15 @@ const testimonialsHtml = site.testimonials.map((t) => `
         </div>
       </div>`).join('\n');
 
+// Wrap each logo in .logo-wrap so grayscale filter is isolated from
+// mix-blend-mode on the img (filter creates a new composite layer that
+// blocks blend mode if both are on the same element).
 const logosHtml = site.logos.map((file) =>
-  `<img src="assets/logos/${file}" alt="${path.parse(file).name}">`
+  `<span class="logo-wrap"><img src="assets/logos/${file}" alt="${path.parse(file).name}"></span>`
 ).join('\n      ');
 
 const logosHtmlSubdir = site.logos.map((file) =>
-  `<img src="../assets/logos/${file}" alt="${path.parse(file).name}">`
+  `<span class="logo-wrap"><img src="../assets/logos/${file}" alt="${path.parse(file).name}"></span>`
 ).join('\n      ');
 
 // ---- homepage ----
@@ -144,7 +147,7 @@ const aboutTpl = read(path.join(ROOT, 'templates/about.html'));
 const aboutHtml = tpl(aboutTpl, {
   ...common,
   TESTIMONIALS: testimonialsHtml,
-  LOGOS: logosHtmlSubdir
+  LOGOS_SUBDIR: logosHtmlSubdir
 });
 write(path.join(DIST, 'about', 'index.html'), aboutHtml);
 

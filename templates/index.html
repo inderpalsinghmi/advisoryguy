@@ -9,21 +9,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
-<!-- MailerLite Universal -->
 <script>
 (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
 ml('account', '{{ML_ACCOUNT}}');
 </script>
-<!-- End MailerLite Universal -->
 </head>
 <body>
 
-<nav class="nav">
+<!-- Homepage nav: no brand (header does that job), links centered -->
+<nav class="nav homepage">
   <div class="inner">
-    <a class="brand" href="/">{{SITE_TITLE}}</a>
     <ul>
-      <li><a href="/">Writing</a></li>
-      <li><a href="/about/">About</a></li>
+      <li><a href="index.html">Writing</a></li>
+      <li><a href="about/">About</a></li>
       <li><a href="#subscribe">Subscribe</a></li>
     </ul>
   </div>
@@ -100,8 +98,7 @@ ml('account', '{{ML_ACCOUNT}}');
       if (current === tag && tag !== 'all') { tag = 'all'; }
       current = tag;
       buttons.forEach(function(b){ b.classList.remove('active'); });
-      var matched = document.querySelector('#tagFilter button[data-tag="' + tag + '"]');
-      if (matched) matched.classList.add('active');
+      document.querySelector('#tagFilter button[data-tag="' + tag + '"]').classList.add('active');
       cards.forEach(function(card){
         if (tag === 'all') { card.style.display = ''; return; }
         card.style.display = (postsByTag[tag]||[]).indexOf(card.getAttribute('data-slug')) >= 0 ? '' : 'none';

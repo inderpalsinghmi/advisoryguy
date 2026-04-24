@@ -1,14 +1,15 @@
 /* The Curve Ahead — styles */
 
 :root {
-  --bg: #f2ede6;              /* warm parchment */
-  --bg-alt: #ede8e0;          /* slightly darker for section breaks */
-  --bg-light: #f7f4f0;        /* lighter warm off-white for cards */
+  --bg: #f2ede6;
+  --bg-alt: #ede8e0;
+  --bg-light: #f7f4f0;
   --text: #1e1e1e;
-  --muted: #707070;
+  --muted: #888;
   --rule: #ddd8ce;
-  --accent: #1a8c82;          /* warmer teal — sits better on warm bg */
-  --accent-mid: #157a70;
+  /* Dusty sage-teal: warm enough to sit on parchment, distinct enough to read */
+  --accent: #4a8c86;
+  --accent-mid: #3a7470;
   --serif: 'Cardo', Georgia, 'Times New Roman', serif;
   --sans: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --max: 720px;
@@ -34,7 +35,7 @@ a {
   text-decoration: none;
   transition: color 0.15s ease, opacity 0.15s ease;
 }
-a:hover { color: var(--accent-mid); opacity: 0.8; }
+a:hover { color: var(--accent-mid); }
 
 /* Layout */
 .wrap {
@@ -52,7 +53,6 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
 .nav {
   background: var(--bg);
   border-bottom: 1px solid var(--rule);
-  padding: 0;
 }
 .nav .inner {
   max-width: var(--max-wide);
@@ -61,14 +61,18 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 56px;
+  height: 52px;
 }
+/* brand only shown on inner pages (post, about) */
 .nav .brand {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
   color: var(--text);
-  letter-spacing: 0.01em;
+}
+/* homepage nav: center the links since there's no brand */
+.nav.homepage .inner {
+  justify-content: center;
 }
 .nav ul {
   list-style: none;
@@ -79,51 +83,51 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
 }
 .nav a {
   font-family: var(--sans);
-  font-size: 13.5px;
-  letter-spacing: 0.04em;
+  font-size: 12px;
+  letter-spacing: 0.06em;
   color: var(--muted);
   text-transform: uppercase;
 }
-.nav a:hover { color: var(--text); opacity: 1; }
+.nav a:hover { color: var(--text); }
 
 /* ── Site Header ─────────────────────────────────── */
 .site-header {
   text-align: center;
-  padding: 48px 28px 48px;
+  padding: 48px 28px 44px;
 }
-/* subtitle floats above the title, between two rules */
+/* subtitle floats above title, between two rules — replicates live site */
 .site-header .subtitle {
   font-family: var(--serif);
   font-style: italic;
   font-size: 18px;
-  color: #999;
-  letter-spacing: 0.03em;
-  margin: 0 0 18px;
-  padding-bottom: 18px;
+  color: #aaa;
+  letter-spacing: 0.02em;
+  margin: 0 0 0;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--rule);
 }
 .site-header h1 {
   font-family: var(--serif);
-  font-size: 62px;
+  font-size: 64px;
   line-height: 1.05;
-  font-weight: 700;           /* bold weight for Cardo — matches screenshot */
+  font-weight: 700;
   margin: 0;
   letter-spacing: -0.01em;
   color: #111;
-  padding: 18px 0;
+  padding: 16px 0 20px;
   border-bottom: 1px solid var(--rule);
 }
 .site-header .tagline {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 11.5px;
   color: var(--muted);
-  letter-spacing: 0.03em;
-  margin: 18px 0 0;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin: 16px 0 0;
 }
 
 /* ── Tag filter ──────────────────────────────────── */
 .tag-filter-wrap {
-  background: var(--bg);
   padding: 28px 28px 0;
   display: flex;
   justify-content: center;
@@ -138,7 +142,7 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   background: transparent;
   color: var(--muted);
   border: 1px solid var(--rule);
-  border-radius: 2px;          /* square corners — more editorial than pill */
+  border-radius: 2px;
   padding: 5px 13px;
   font-family: var(--sans);
   font-size: 11px;
@@ -149,7 +153,7 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
 }
 .tag-filter button:hover {
   color: var(--text);
-  border-color: var(--text);
+  border-color: #aaa;
 }
 .tag-filter button.active {
   background: var(--text);
@@ -167,7 +171,7 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   border-left: 5px solid var(--accent);
   padding: 32px 36px 28px;
   margin: 20px 0;
-  transition: border-left-color 0.15s ease;
+  transition: border-left-color 0.2s ease;
 }
 .post-card:hover { border-left-color: var(--accent-mid); }
 
@@ -178,15 +182,13 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   margin: 0 0 12px;
   font-weight: 400;
 }
-.post-card h2 a {
-  color: #111;
-}
-.post-card h2 a:hover { color: var(--accent); opacity: 1; }
+.post-card h2 a { color: #111; }
+.post-card h2 a:hover { color: var(--accent); }
 
 .post-meta {
   font-family: var(--sans);
   font-size: 12px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   color: var(--muted);
   margin-bottom: 14px;
   display: flex;
@@ -221,7 +223,7 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   text-transform: uppercase;
   color: var(--accent);
 }
-.read-more:hover { color: var(--accent-mid); opacity: 1; }
+.read-more:hover { color: var(--accent-mid); }
 
 /* ── Logo bar ────────────────────────────────────── */
 .logo-bar {
@@ -235,23 +237,36 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 40px 48px;
+  gap: 36px 44px;
   max-width: 820px;
   margin: 0 auto;
+}
+/*
+  Logo transparency fix:
+  mix-blend-mode: multiply makes white pixels take on the background color
+  (white × #ede8e0 = #ede8e0 — effectively invisible).
+  filter must NOT be on the same element as mix-blend-mode
+  (filter creates an isolated composite layer that blocks blending).
+  Solution: grayscale via a wrapper span, multiply on the img.
+*/
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  filter: grayscale(100%) contrast(0.75);
+  opacity: 0.72;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+.logo-wrap:hover {
+  opacity: 1;
+  filter: grayscale(30%) contrast(0.9);
 }
 .logo-bar img {
   height: 44px;
   width: auto;
   max-width: 120px;
   object-fit: contain;
-  filter: grayscale(100%) contrast(0.7);
-  mix-blend-mode: multiply;   /* kills white backgrounds on JPEGs */
-  opacity: 0.7;
-  transition: opacity 0.2s ease, filter 0.2s ease;
-}
-.logo-bar img:hover {
-  opacity: 1;
-  filter: grayscale(40%) contrast(0.85);
+  mix-blend-mode: multiply; /* kills white JPEG/PNG backgrounds */
+  display: block;
 }
 
 /* ── Testimonials ────────────────────────────────── */
@@ -260,16 +275,15 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   padding: 72px 28px 60px;
 }
 .testimonials > .wrap-wide > h2 {
-  font-family: var(--serif);
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: center;
   color: var(--muted);
   margin: 0 0 56px;
 }
-
 .testimonial {
   max-width: 640px;
   margin: 0 auto 52px;
@@ -293,8 +307,8 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
 }
 .testimonial .attrib {
   font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -349,6 +363,27 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   margin: 0 auto;
   text-align: left;
 }
+/* MailerLite container overrides — blend into page bg */
+.ml-embedded .ml-form-embedWrapper,
+.ml-embedded .ml-form-embedBody {
+  background-color: var(--bg) !important;
+  box-shadow: none !important;
+  border: 1px solid var(--rule) !important;
+  border-radius: 2px !important;
+}
+.ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+  border: 1px solid var(--rule) !important;
+  border-radius: 2px !important;
+  background: var(--bg-light) !important;
+  font-family: var(--sans) !important;
+  font-size: 14px !important;
+}
+.ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label,
+.ml-embedded .ml-form-embedWrapper .ml-form-embedBody h4,
+.ml-embedded .ml-form-embedWrapper .ml-form-embedBody p {
+  font-family: var(--sans) !important;
+  color: var(--text) !important;
+}
 
 /* ── Footer ──────────────────────────────────────── */
 .footer {
@@ -361,7 +396,7 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   letter-spacing: 0.02em;
 }
 .footer a { color: var(--muted); }
-.footer a:hover { color: var(--text); opacity: 1; }
+.footer a:hover { color: var(--text); }
 .footer .links {
   display: flex;
   justify-content: center;
@@ -371,9 +406,7 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
 }
 
 /* ── Post page ───────────────────────────────────── */
-.post {
-  padding: 56px 0 40px;
-}
+.post { padding: 56px 0 40px; }
 .post h1 {
   font-family: var(--serif);
   font-size: 46px;
@@ -384,7 +417,11 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   letter-spacing: -0.01em;
 }
 .post .post-meta { margin-bottom: 36px; }
-.post-body { margin-top: 8px; border-top: 1px solid var(--rule); padding-top: 32px; }
+.post-body {
+  margin-top: 8px;
+  border-top: 1px solid var(--rule);
+  padding-top: 32px;
+}
 .post-body p { margin: 0 0 20px; line-height: 1.8; }
 .post-body h2 {
   font-family: var(--serif);
@@ -431,7 +468,6 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
   font-weight: 400;
   margin: 0 0 32px;
   color: #111;
-  letter-spacing: -0.01em;
 }
 .about-page h2 {
   font-family: var(--serif);
@@ -450,13 +486,12 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
 /* ── Responsive ──────────────────────────────────── */
 @media (max-width: 640px) {
   body { font-size: 16px; }
-  .site-header { padding: 52px 20px 40px; }
+  .site-header { padding: 40px 20px 36px; }
   .site-header h1 { font-size: 44px; }
-  .site-header .subtitle { font-size: 18px; }
   .post-card { padding: 24px 22px 22px 26px; }
   .post-card h2 { font-size: 23px; }
   .post h1, .about-page h1 { font-size: 34px; }
-  .logo-bar .row { gap: 28px 32px; }
+  .logo-bar .row { gap: 24px 28px; }
   .logo-bar img { height: 36px; max-width: 96px; }
   .nav ul { gap: 18px; }
   .testimonial { grid-template-columns: 2px 1fr; gap: 0 16px; }
