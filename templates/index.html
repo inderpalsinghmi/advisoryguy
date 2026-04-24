@@ -7,7 +7,7 @@
 <meta name="description" content="{{TAGLINE}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <!-- MailerLite Universal -->
 <script>
@@ -19,7 +19,7 @@ ml('account', '{{ML_ACCOUNT}}');
 <body>
 
 <nav class="nav">
-  <div class="wrap-wide">
+  <div class="inner">
     <a class="brand" href="/">{{SITE_TITLE}}</a>
     <ul>
       <li><a href="/">Writing</a></li>
@@ -37,8 +37,10 @@ ml('account', '{{ML_ACCOUNT}}');
 
 <main>
   <div class="wrap">
-    <div class="tag-filter" id="tagFilter">
-      {{TAG_BUTTONS}}
+    <div class="tag-filter-wrap">
+      <div class="tag-filter" id="tagFilter">
+        {{TAG_BUTTONS}}
+      </div>
     </div>
     <section class="feed" id="feed">
       {{POST_CARDS}}
@@ -53,14 +55,14 @@ ml('account', '{{ML_ACCOUNT}}');
 
   <section class="testimonials">
     <div class="wrap-wide">
-      <h2>What clients have said</h2>
+      <h2>What clients say</h2>
       {{TESTIMONIALS}}
     </div>
   </section>
 
   <section class="bio">
-    <div class="body">
-      <h2>About</h2>
+    <div class="body wrap">
+      <p class="eyebrow">About the author</p>
       <p>I've spent most of my career inside organizations that were trying to change how they work — sometimes from the inside (Microsoft, Bridgewater, HSBC), sometimes from the outside (McKinsey, IDEO, WWE, XFL). The thread through all of it has been understanding how operations run and rebuilding the parts that don't.</p>
       <p>More recently I helped build Zelus Analytics, a sports AI platform, from early stage through its acquisition by Teamworks. That experience — watching AI go from a pitch deck to a product that teams depended on — shaped how I think about AI implementation everywhere else.</p>
       <p>I lead the transformation practice at <a href="{{SRA_URL}}">Silver Ridge Advisors</a>. I write here about what I'm learning.</p>
@@ -69,7 +71,8 @@ ml('account', '{{ML_ACCOUNT}}');
   </section>
 
   <section class="subscribe" id="subscribe">
-    <h2>{{SUBSCRIBE_HEADING}}</h2>
+    <h2>Get the next one to your inbox</h2>
+    <p class="sub-note">No noise. When there's something worth reading, it'll land.</p>
     <div class="form-wrap">
       <div class="ml-embedded" data-form="{{ML_FORM_ID}}"></div>
     </div>
@@ -82,7 +85,7 @@ ml('account', '{{ML_ACCOUNT}}');
     <span>·</span>
     <a href="{{LINKEDIN}}" target="_blank" rel="noopener">LinkedIn</a>
   </div>
-  <p>© {{YEAR}} {{AUTHOR}}</p>
+  <p style="margin:0">© {{YEAR}} {{AUTHOR}}</p>
 </footer>
 
 <script>
@@ -101,8 +104,7 @@ ml('account', '{{ML_ACCOUNT}}');
       if (matched) matched.classList.add('active');
       cards.forEach(function(card){
         if (tag === 'all') { card.style.display = ''; return; }
-        var slugs = (postsByTag[tag] || []);
-        card.style.display = slugs.indexOf(card.getAttribute('data-slug')) >= 0 ? '' : 'none';
+        card.style.display = (postsByTag[tag]||[]).indexOf(card.getAttribute('data-slug')) >= 0 ? '' : 'none';
       });
     });
   });

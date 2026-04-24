@@ -77,8 +77,10 @@ const common = {
 
 const testimonialsHtml = site.testimonials.map((t) => `
       <div class="testimonial">
-        <blockquote>${escapeHtml(t.quote)}</blockquote>
-        <div class="attrib">— ${escapeHtml(t.attribution)}</div>
+        <div class="testimonial-inner">
+          <blockquote>${escapeHtml(t.quote)}</blockquote>
+          <div class="attrib">${escapeHtml(t.attribution)}</div>
+        </div>
       </div>`).join('\n');
 
 const logosHtml = site.logos.map((file) =>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — {{SITE_TITLE}}</title>
-<meta name="description" content="About Inderpal Singh">
+<meta name="description" content="About Inderpal Singh — transformation practice lead at Silver Ridge Advisors">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
 <!-- MailerLite Universal -->
 <script>
@@ -19,7 +19,7 @@ ml('account', '{{ML_ACCOUNT}}');
 <body>
 
 <nav class="nav">
-  <div class="wrap-wide">
+  <div class="inner">
     <a class="brand" href="/">{{SITE_TITLE}}</a>
     <ul>
       <li><a href="/">Writing</a></li>
@@ -64,7 +64,7 @@ ml('account', '{{ML_ACCOUNT}}');
 
   <section class="testimonials">
     <div class="wrap-wide">
-      <h2>What clients have said</h2>
+      <h2>What clients say</h2>
       {{TESTIMONIALS}}
     </div>
   </section>
@@ -76,7 +76,8 @@ ml('account', '{{ML_ACCOUNT}}');
   </section>
 
   <section class="subscribe" id="subscribe">
-    <h2>{{SUBSCRIBE_HEADING}}</h2>
+    <h2>Get the next one to your inbox</h2>
+    <p class="sub-note">No noise. When there's something worth reading, it'll land.</p>
     <div class="form-wrap">
       <div class="ml-embedded" data-form="{{ML_FORM_ID}}"></div>
     </div>
@@ -89,7 +90,7 @@ ml('account', '{{ML_ACCOUNT}}');
     <span>·</span>
     <a href="{{LINKEDIN}}" target="_blank" rel="noopener">LinkedIn</a>
   </div>
-  <p>© {{YEAR}} {{AUTHOR}}</p>
+  <p style="margin:0">© {{YEAR}} {{AUTHOR}}</p>
 </footer>
 
 </body>
