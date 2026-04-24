@@ -89,33 +89,36 @@ a:hover { color: var(--accent-mid); opacity: 0.8; }
 /* ── Site Header ─────────────────────────────────── */
 .site-header {
   text-align: center;
-  padding: 80px 28px 56px;
+  padding: 48px 28px 48px;
+}
+/* subtitle floats above the title, between two rules */
+.site-header .subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: #999;
+  letter-spacing: 0.03em;
+  margin: 0 0 18px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--rule);
 }
 .site-header h1 {
   font-family: var(--serif);
   font-size: 62px;
   line-height: 1.05;
-  font-weight: 400;           /* Cardo is elegant at regular weight */
-  margin: 0 0 18px;
-  letter-spacing: -0.02em;
+  font-weight: 700;           /* bold weight for Cardo — matches screenshot */
+  margin: 0;
+  letter-spacing: -0.01em;
   color: #111;
-}
-.site-header .subtitle {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 21px;
-  color: #555;
-  margin: 0 0 22px;
-  letter-spacing: 0.01em;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
 }
 .site-header .tagline {
   font-family: var(--sans);
   font-size: 13px;
   color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin: 0;
+  letter-spacing: 0.03em;
+  margin: 18px 0 0;
 }
 
 /* ── Tag filter ──────────────────────────────────── */
