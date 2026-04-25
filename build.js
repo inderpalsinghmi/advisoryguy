@@ -105,13 +105,13 @@ const postCards = posts.map((p) => {
   const tags = (p.tags || []).map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join(' ');
   return `
       <article class="post-card" data-slug="${escapeHtml(p.slug)}">
-        <h2><a href="${escapeHtml(p.slug)}/">${escapeHtml(p.title)}</a></h2>
+        <h2><a href="${escapeHtml(p.slug)}/index.html">${escapeHtml(p.title)}</a></h2>
         <div class="post-meta">
           <span class="date">${formatDate(p.date)}</span>
           <span class="tags">${tags}</span>
         </div>
         <p class="excerpt">${escapeHtml(p.excerpt)}</p>
-        <a class="read-more" href="${escapeHtml(p.slug)}/">Read more →</a>
+        <a class="read-more" href="${escapeHtml(p.slug)}/index.html">Read more →</a>
       </article>`;
 }).join('\n');
 

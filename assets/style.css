@@ -198,31 +198,34 @@ a:hover { color: var(--accent-dk); }
 /* Divider between cards — matches live site divider style */
 .post-card + .post-card { border-top: 1px solid var(--rule); }
 
-/* ── Logo bar — exact match ──────────────────────── */
+/* ── Logo bar — single row, uniform sizes ────────── */
 .logo-bar {
   background: var(--bg);
-  padding: 56px 28px 60px;
+  padding: 52px 28px 56px;
   border-top: 1px solid var(--rule);
 }
 .logo-bar .row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;          /* force single line */
   justify-content: center;
   align-items: center;
-  gap: 32px 48px;
-  max-width: 860px;
+  gap: 0 36px;
+  max-width: 960px;
   margin: 0 auto;
+  overflow-x: auto;           /* safe fallback on very small screens */
 }
-/* Color logos, white backgrounds dissolve via multiply */
 .logo-wrap {
-  display: flex; align-items: center;
-  opacity: 0.85;
+  display: flex; align-items: center; flex-shrink: 0;
+  opacity: 0.82;
   transition: opacity 0.2s ease;
 }
 .logo-wrap:hover { opacity: 1; }
 .logo-bar img {
-  height: 44px; width: auto; max-width: 130px;
-  object-fit: contain; display: block;
+  height: 34px;               /* uniform height — all logos same visual weight */
+  width: auto;
+  max-width: 100px;           /* caps wide logos like XFL */
+  object-fit: contain;
+  display: block;
   mix-blend-mode: multiply;
 }
 
@@ -272,7 +275,7 @@ a:hover { color: var(--accent-dk); }
 
 /* ── Subscribe ───────────────────────────────────── */
 .subscribe {
-  background: var(--bg-alt);
+  background: var(--bg);      /* white — ML form box blends in, no visible card */
   padding: 72px 28px;
   text-align: center;
   border-top: 1px solid var(--rule);
@@ -285,12 +288,16 @@ a:hover { color: var(--accent-dk); }
   font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 0 0 28px;
 }
 .subscribe .form-wrap { max-width: 480px; margin: 0 auto; text-align: left; }
-.ml-embedded .ml-form-embedWrapper,
-.ml-embedded .ml-form-embedBody {
-  background-color: var(--bg) !important;
+/* Strip MailerLite's white box so it sits flush on the white section */
+.ml-embedded .ml-form-embedWrapper {
+  background: transparent !important;
   box-shadow: none !important;
-  border: 1px solid var(--rule) !important;
-  border-radius: 3px !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.ml-embedded .ml-form-embedBody {
+  background: transparent !important;
+  padding: 0 !important;
 }
 
 /* ── Footer ──────────────────────────────────────── */
@@ -333,13 +340,36 @@ a:hover { color: var(--accent-dk); }
 
 /* ── Responsive ──────────────────────────────────── */
 @media (max-width: 640px) {
-  .site-header { padding: 52px 20px 48px; }
-  .site-header h1 { font-size: 40px; }
-  .site-header .subtitle { font-size: 20px; }
-  .post-card { padding: 28px 24px; }
+  body { font-size: 15px; }
+
+  .nav .inner { padding: 0 16px; height: 48px; }
+  .nav ul { gap: 16px; }
+  .nav a { font-size: 10px; letter-spacing: 0.06em; }
+
+  .site-header { padding: 48px 20px 40px; }
+  .site-header .subtitle { font-size: 18px; }
+  .site-header h1 { font-size: 36px; }
+  .site-header .tagline { font-size: 13px; }
+  .site-header .rule { max-width: 80%; }
+
+  .tag-filter-wrap { padding: 24px 16px 0; }
+  .tag-filter button { font-size: 10px; padding: 4px 10px; }
+
+  .feed { padding: 16px 0 56px; }
+  .post-card { padding: 24px 20px; }
   .post-card h2 { font-size: 20px; }
-  .logo-bar .row { gap: 24px 32px; }
-  .logo-bar img { height: 36px; }
-  .post h1, .about-page h1 { font-size: 32px; }
-  .nav ul { gap: 18px; }
+  .post-card .excerpt { font-size: 14px; }
+
+  /* logos: allow wrap on mobile, smaller */
+  .logo-bar .row { flex-wrap: wrap; gap: 20px 28px; overflow-x: visible; }
+  .logo-bar img { height: 28px; max-width: 80px; }
+
+  .testimonial { grid-template-columns: 2px 1fr; gap: 0 16px; }
+  .testimonial blockquote { font-size: 16px; }
+
+  .subscribe { padding: 52px 20px; }
+  .subscribe h2 { font-size: 24px; }
+
+  .post h1, .about-page h1 { font-size: 30px; }
+  .post-body h2 { font-size: 22px; }
 }
