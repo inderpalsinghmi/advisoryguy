@@ -1,55 +1,45 @@
-/* The Curve Ahead — styles */
+/* The Curve Ahead — exact match to advisoryguy.com */
 
 :root {
-  --bg: #f2ede6;
-  --bg-alt: #ede8e0;
-  --bg-light: #f7f4f0;
-  --text: #1e1e1e;
-  --muted: #888;
-  --rule: #ddd8ce;
-  /* Dusty sage-teal: warm enough to sit on parchment, distinct enough to read */
-  --accent: #4a8c86;
-  --accent-mid: #3a7470;
-  --serif: 'Cardo', Georgia, 'Times New Roman', serif;
-  --sans: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --max: 720px;
-  --max-wide: 900px;
+  --bg:        #ffffff;
+  --bg-card:   #fafafa;
+  --bg-alt:    #f5f5f5;
+  --text:      #636363;
+  --title:     #000000;
+  --muted:     #a4a4a4;
+  --divider:   #8f8f8f;
+  --rule:      #e8e8e8;
+  --accent:    #61cace;   /* exact READ MORE / link teal from live site */
+  --accent-dk: #4ab0b5;
+  --serif:     'Cardo', Georgia, serif;
+  --sans:      'Inter', 'Open Sans', -apple-system, sans-serif;
+  --max:       720px;
+  --max-wide:  960px;
 }
 
 * { box-sizing: border-box; }
 
 html, body {
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.15s ease, opacity 0.15s ease;
+  transition: color 0.15s ease;
 }
-a:hover { color: var(--accent-mid); }
+a:hover { color: var(--accent-dk); }
 
-/* Layout */
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 28px;
-}
-.wrap-wide {
-  max-width: var(--max-wide);
-  margin: 0 auto;
-  padding: 0 28px;
-}
+.wrap      { max-width: var(--max);      margin: 0 auto; padding: 0 28px; }
+.wrap-wide { max-width: var(--max-wide); margin: 0 auto; padding: 0 28px; }
 
-/* ── Nav ─────────────────────────────────────────── */
+/* ── Nav (our design, kept) ─────────────────────── */
 .nav {
   background: var(--bg);
   border-bottom: 1px solid var(--rule);
@@ -63,172 +53,156 @@ a:hover { color: var(--accent-mid); }
   align-items: center;
   height: 52px;
 }
-/* brand only shown on inner pages (post, about) */
+.nav.homepage .inner { justify-content: center; }
 .nav .brand {
   font-family: var(--serif);
   font-size: 17px;
-  font-weight: 400;
-  color: var(--text);
-}
-/* homepage nav: center the links since there's no brand */
-.nav.homepage .inner {
-  justify-content: center;
+  color: var(--title);
 }
 .nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 28px;
+  list-style: none; padding: 0; margin: 0;
+  display: flex; gap: 28px;
 }
 .nav a {
   font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--text);
 }
-.nav a:hover { color: var(--text); }
+.nav a:hover { color: var(--title); }
 
-/* ── Site Header ─────────────────────────────────── */
+/* ── Site Header — exact layout from live site ───── */
 .site-header {
   text-align: center;
-  padding: 60px 28px 56px;
+  padding: 80px 28px 70px;
+  background: var(--bg);
 }
-/* subtitle floats above title, between two rules — replicates live site */
+/* Subtitle sits above the title in light gray Cardo */
 .site-header .subtitle {
   font-family: var(--serif);
-  font-style: italic;
-  font-size: 18px;
-  color: #aaa;
-  letter-spacing: 0.02em;
-  margin: 0 0 0;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--rule);
+  font-size: 26px;
+  font-weight: 400;
+  font-style: normal;
+  color: #a4a4a4;
+  margin: 0 0 12px;
+  letter-spacing: 0.01em;
 }
+/* Horizontal rule between subtitle and title */
+.site-header .rule {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 0 auto 12px;
+  max-width: 480px;
+}
+/* The Curve Ahead — black Cardo */
 .site-header h1 {
   font-family: var(--serif);
-  font-size: 64px;
-  line-height: 1.05;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: -0.01em;
-  color: #111;
-  padding: 16px 0 20px;
-  border-bottom: 1px solid var(--rule);
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--title);
+  margin: 0 0 12px;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
 }
+/* Tagline — Inter, small gray */
 .site-header .tagline {
   font-family: var(--sans);
-  font-size: 11.5px;
-  color: var(--muted);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  margin: 16px 0 0;
+  font-size: 16.8px;
+  color: #636363;
+  margin: 0;
+  font-weight: 400;
 }
 
-/* ── Tag filter ──────────────────────────────────── */
+/* ── Tag filter (our design, kept) ──────────────── */
 .tag-filter-wrap {
-  padding: 28px 28px 0;
+  padding: 32px 28px 0;
   display: flex;
   justify-content: center;
 }
 .tag-filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
 }
 .tag-filter button {
   background: transparent;
-  color: var(--muted);
+  color: var(--text);
   border: 1px solid var(--rule);
   border-radius: 2px;
-  padding: 5px 13px;
+  padding: 5px 14px;
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.15s ease;
 }
-.tag-filter button:hover {
-  color: var(--text);
-  border-color: #aaa;
-}
-.tag-filter button.active {
-  background: var(--text);
-  color: var(--bg);
-  border-color: var(--text);
-}
+.tag-filter button:hover  { border-color: var(--text); }
+.tag-filter button.active { background: var(--title); color: var(--bg); border-color: var(--title); }
 
-/* ── Post feed ───────────────────────────────────── */
-.feed {
-  padding: 20px 0 80px;
-}
+/* ── Post feed — exact match to live site cards ──── */
+.feed { padding: 28px 0 80px; }
+
 .post-card {
-  background: var(--bg-light);
+  background: var(--bg-card);
   border: 1px solid var(--rule);
   border-radius: 3px;
-  padding: 36px 40px 32px;
+  padding: 40px 44px 36px;
   margin: 24px 0;
 }
-
 .post-card h2 {
   font-family: var(--serif);
-  font-size: 26px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #636363;              /* exact post title color from live CSS */
+  margin: 0 0 8px;
   line-height: 1.3;
-  margin: 0 0 10px;
-  font-weight: 400;
 }
-/* Title is teal — matches the calm WordPress aesthetic */
-.post-card h2 a { color: var(--accent); }
-.post-card h2 a:hover { color: var(--accent-mid); }
+.post-card h2 a { color: #636363; }
+.post-card h2 a:hover { color: var(--accent); }
 
 .post-meta {
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
-  margin-bottom: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
+  margin-bottom: 14px;
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
 }
 .post-meta .tags { display: flex; gap: 6px; flex-wrap: wrap; }
-
 .tag-pill {
-  display: inline-block;
   font-size: 10px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);
   border: 1px solid var(--rule);
-  padding: 2px 7px;
+  padding: 2px 8px;
   border-radius: 2px;
 }
 
 .post-card .excerpt {
-  margin: 0 0 20px;
-  color: #555;
-  font-size: 15.5px;
+  font-family: var(--sans);
+  font-size: 16px;
+  color: #636363;
   line-height: 1.7;
+  margin: 0 0 20px;
 }
 .read-more {
   font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 13px;
+  font-weight: 500;
+  color: #61cace;              /* exact READ MORE color from live CSS */
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--accent);
 }
-.read-more:hover { color: var(--accent-mid); }
+.read-more:hover { color: var(--accent-dk); }
 
-/* ── Logo bar ────────────────────────────────────── */
+/* Divider between cards — matches live site divider style */
+.post-card + .post-card { border-top: 1px solid var(--rule); }
+
+/* ── Logo bar — exact match ──────────────────────── */
 .logo-bar {
   background: var(--bg);
-  padding: 56px 28px;
+  padding: 56px 28px 60px;
   border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
 }
 .logo-bar .row {
   display: flex;
@@ -236,253 +210,136 @@ a:hover { color: var(--accent-mid); }
   justify-content: center;
   align-items: center;
   gap: 32px 48px;
-  max-width: 820px;
+  max-width: 860px;
   margin: 0 auto;
 }
-/* Color logos, no grayscale. mix-blend-mode: multiply on img
-   dissolves white JPEG backgrounds into page bg.
-   filter stays on wrapper so it doesn't break blending. */
+/* Color logos, white backgrounds dissolve via multiply */
 .logo-wrap {
-  display: flex;
-  align-items: center;
-  opacity: 0.8;
+  display: flex; align-items: center;
+  opacity: 0.85;
   transition: opacity 0.2s ease;
 }
 .logo-wrap:hover { opacity: 1; }
 .logo-bar img {
-  height: 44px;
-  width: auto;
-  max-width: 130px;
-  object-fit: contain;
+  height: 44px; width: auto; max-width: 130px;
+  object-fit: contain; display: block;
   mix-blend-mode: multiply;
-  display: block;
 }
 
 /* ── Testimonials ────────────────────────────────── */
 .testimonials {
   background: var(--bg-alt);
   padding: 72px 28px 60px;
+  border-top: 1px solid var(--rule);
 }
 .testimonials > .wrap-wide > h2 {
   font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--muted);
-  margin: 0 0 56px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-align: center; color: var(--muted); margin: 0 0 52px;
 }
 .testimonial {
-  max-width: 640px;
-  margin: 0 auto 52px;
-  display: grid;
-  grid-template-columns: 3px 1fr;
-  gap: 0 24px;
+  max-width: 640px; margin: 0 auto 48px;
+  display: grid; grid-template-columns: 3px 1fr; gap: 0 24px;
 }
-.testimonial::before {
-  content: '';
-  background: var(--accent);
-  border-radius: 2px;
-}
+.testimonial::before { content: ''; background: var(--accent); border-radius: 2px; }
 .testimonial-inner { padding: 4px 0; }
 .testimonial blockquote {
   margin: 0 0 10px;
   font-family: var(--serif);
-  font-size: 20px;
-  line-height: 1.6;
-  font-style: italic;
-  color: #222;
+  font-size: 19px; line-height: 1.6; font-style: italic; color: #333;
 }
 .testimonial .attrib {
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-family: var(--sans); font-size: 11px;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
 }
 
 /* ── Bio ─────────────────────────────────────────── */
 .bio {
-  background: var(--bg-alt);
+  background: var(--bg);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   padding: 64px 28px;
 }
-.bio .body {
-  max-width: var(--max);
-  margin: 0 auto;
-}
+.bio .body { max-width: var(--max); margin: 0 auto; }
 .bio .eyebrow {
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0 0 20px;
+  font-family: var(--sans); font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 20px;
 }
-.bio p {
-  margin: 0 0 16px;
-  font-size: 16.5px;
-  color: #333;
-}
+.bio p { margin: 0 0 16px; font-size: 16px; color: var(--text); }
 .bio p:last-child { margin-bottom: 0; }
 
 /* ── Subscribe ───────────────────────────────────── */
 .subscribe {
-  background: var(--bg);
+  background: var(--bg-alt);
   padding: 72px 28px;
   text-align: center;
+  border-top: 1px solid var(--rule);
 }
 .subscribe h2 {
   font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 400;
-  margin: 0 0 8px;
-  color: #111;
+  font-size: 30px; font-weight: 400; color: var(--title); margin: 0 0 8px;
 }
 .subscribe .sub-note {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--muted);
-  margin: 0 0 28px;
+  font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 0 0 28px;
 }
-.subscribe .form-wrap {
-  max-width: 480px;
-  margin: 0 auto;
-  text-align: left;
-}
-/* MailerLite container overrides — blend into page bg */
+.subscribe .form-wrap { max-width: 480px; margin: 0 auto; text-align: left; }
 .ml-embedded .ml-form-embedWrapper,
 .ml-embedded .ml-form-embedBody {
   background-color: var(--bg) !important;
   box-shadow: none !important;
   border: 1px solid var(--rule) !important;
-  border-radius: 2px !important;
-}
-.ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
-  border: 1px solid var(--rule) !important;
-  border-radius: 2px !important;
-  background: var(--bg-light) !important;
-  font-family: var(--sans) !important;
-  font-size: 14px !important;
-}
-.ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label,
-.ml-embedded .ml-form-embedWrapper .ml-form-embedBody h4,
-.ml-embedded .ml-form-embedWrapper .ml-form-embedBody p {
-  font-family: var(--sans) !important;
-  color: var(--text) !important;
+  border-radius: 3px !important;
 }
 
 /* ── Footer ──────────────────────────────────────── */
 .footer {
-  background: var(--bg-alt);
+  background: var(--bg);
   border-top: 1px solid var(--rule);
-  padding: 28px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 0.02em;
+  padding: 28px; text-align: center;
+  color: var(--muted); font-size: 13px;
 }
 .footer a { color: var(--muted); }
-.footer a:hover { color: var(--text); }
+.footer a:hover { color: var(--title); }
 .footer .links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 6px;
+  display: flex; justify-content: center;
+  gap: 20px; align-items: center; margin-bottom: 6px;
 }
 
 /* ── Post page ───────────────────────────────────── */
 .post { padding: 56px 0 40px; }
 .post h1 {
   font-family: var(--serif);
-  font-size: 46px;
-  line-height: 1.15;
-  margin: 0 0 16px;
-  font-weight: 400;
-  color: #111;
-  letter-spacing: -0.01em;
+  font-size: 42px; font-weight: 400; color: var(--title);
+  margin: 0 0 16px; line-height: 1.2;
 }
-.post .post-meta { margin-bottom: 36px; }
-.post-body {
-  margin-top: 8px;
-  border-top: 1px solid var(--rule);
-  padding-top: 32px;
-}
-.post-body p { margin: 0 0 20px; line-height: 1.8; }
-.post-body h2 {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 400;
-  margin: 48px 0 16px;
-  line-height: 1.25;
-  color: #111;
-}
-.post-body h3 {
-  font-family: var(--serif);
-  font-size: 21px;
-  font-weight: 400;
-  margin: 36px 0 12px;
-  color: #222;
-}
-.post-body h4 {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--muted);
-  margin: 28px 0 10px;
-}
-.post-body ul, .post-body ol {
-  margin: 0 0 20px;
-  padding-left: 22px;
-}
-.post-body li { margin-bottom: 10px; line-height: 1.7; }
-.post-body blockquote {
-  border-left: 3px solid var(--accent);
-  margin: 28px 0;
-  padding: 6px 0 6px 22px;
-  font-style: italic;
-  color: #444;
-}
+.post .post-meta { margin-bottom: 32px; }
+.post-body { border-top: 1px solid var(--rule); padding-top: 32px; margin-top: 8px; }
+.post-body p  { margin: 0 0 20px; line-height: 1.8; color: var(--text); }
+.post-body h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--title); margin: 44px 0 14px; }
+.post-body h3 { font-family: var(--serif); font-size: 20px; font-weight: 400; color: #333; margin: 32px 0 12px; }
+.post-body h4 { font-family: var(--sans); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin: 26px 0 10px; }
+.post-body ul, .post-body ol { margin: 0 0 20px; padding-left: 22px; }
+.post-body li  { margin-bottom: 10px; line-height: 1.7; }
+.post-body blockquote { border-left: 3px solid var(--accent); margin: 24px 0; padding: 4px 0 4px 20px; font-style: italic; color: #555; }
 
 /* ── About page ──────────────────────────────────── */
 .about-page { padding: 56px 0 48px; }
-.about-page h1 {
-  font-family: var(--serif);
-  font-size: 46px;
-  font-weight: 400;
-  margin: 0 0 32px;
-  color: #111;
-}
-.about-page h2 {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 400;
-  margin: 48px 0 16px;
-  color: #111;
-}
-.about-page p { margin: 0 0 18px; line-height: 1.78; }
-.about-page hr {
-  border: none;
-  border-top: 1px solid var(--rule);
-  margin: 48px 0;
-}
+.about-page h1 { font-family: var(--serif); font-size: 42px; font-weight: 400; color: var(--title); margin: 0 0 32px; }
+.about-page h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--title); margin: 44px 0 14px; }
+.about-page p  { margin: 0 0 18px; line-height: 1.78; }
+.about-page hr { border: none; border-top: 1px solid var(--rule); margin: 44px 0; }
 
 /* ── Responsive ──────────────────────────────────── */
 @media (max-width: 640px) {
-  body { font-size: 16px; }
-  .site-header { padding: 40px 20px 36px; }
-  .site-header h1 { font-size: 44px; }
-  .post-card { padding: 24px 22px 22px 26px; }
-  .post-card h2 { font-size: 23px; }
-  .post h1, .about-page h1 { font-size: 34px; }
-  .logo-bar .row { gap: 24px 28px; }
-  .logo-bar img { height: 36px; max-width: 96px; }
+  .site-header { padding: 52px 20px 48px; }
+  .site-header h1 { font-size: 40px; }
+  .site-header .subtitle { font-size: 20px; }
+  .post-card { padding: 28px 24px; }
+  .post-card h2 { font-size: 20px; }
+  .logo-bar .row { gap: 24px 32px; }
+  .logo-bar img { height: 36px; }
+  .post h1, .about-page h1 { font-size: 32px; }
   .nav ul { gap: 18px; }
-  .testimonial { grid-template-columns: 2px 1fr; gap: 0 16px; }
-  .testimonial blockquote { font-size: 17px; }
 }
